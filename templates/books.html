@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    {% for book in books %}
+        
+            <div>
+                <h4>{{book['title']}}</h4>
+                <h6>{{book['author']}}</h6>
+                <h6>{{book['year']}}</h6>
+                <h6>{{book['isbn']}}</h6>
+            </div>
+            <div class="card-footer">
+                <a href="/binfo/{{book['isbn']}}" class="card-link">Go to book page</a>
+            </div>
+      
+    {% endfor %}
+
+    <h3>
+        <a href="/search">Return to Search page</a>
+    </h3>
+</body>
+</html>

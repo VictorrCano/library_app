@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+        <h1>Title: "{{bookInfo[0]['title']}}"</h1>
+        <h5>Author: {{bookInfo[0]['author']}}</h5>
+        <h5>Published: {{bookInfo[0]['year']}}</h5>
+        <h5>ISBN: {{bookInfo[0]['isbn']}}</h5>
+    </div>
+
+    {% if message %}
+        <p class="message">{{message}}</p>
+    {% endif %}
+
+    <div>
+        <h5>Nº of Ratings: {{bookInfo[1]['work_ratings_count']}}</h5>
+        <h5>Average Rating: {{bookInfo[1]['average_rating']}}</h5>
+    </div>
+
+    <form method="POST" class="form-border">
+        <div>
+                
+            <div>
+                <label for="rating">Rate this book</label>
+                <select id="rating" name="rating" class="form-control" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option selected value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div>
+                <span class="input-group-text">Say something:</span>
+            </div>
+                    
+            <div>
+                <textarea name="comment" id="comment" class="form-control" rows="1" required></textarea>
+            </div>
+            
+            <div>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+
+        <div style="margin:25px;border-style: dashed;text-align:center;">
+            {% for review in reviews %}
+                <h4>{{review['username']}} said:</h6>
+                <p>"{{review['comment']}}"
+                Rated: {{review['rating']}}</p>
+            {% endfor %}
+        </div>
+
+            <h3>
+                <a href="/search">Return to Search page</a>
+            </h3>
+</body>
+</html>

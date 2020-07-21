@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Search page</h1>
+    <p>
+        {% if message %}
+        <p class="message">{{message}}</p>
+        {% endif %}
+    </p>
+    <form action="/search" method="GET"> 
+        <input type="text" name="book" autofocus aria-describedby="bookHelp" placeholder="ISBN, Title or Author">
+        <p><small id="bookHelp">Ex: 074349671X, The Tenth Circle , or Jodi Picoult</small></p>
+        <p></p><button type="submit">Search</button></p>
+    </form>
+
+    <a href="/logout">Log Out</a>
+</body>
+</html>
