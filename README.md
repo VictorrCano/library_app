@@ -1,6 +1,6 @@
 # Library App
 
-This is my Project 1: Books for the course Web Programming with Python and JavaScript.
+This my is a Library web application.
 
 application.py is where the flask app is written
 
