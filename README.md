@@ -1,4 +1,4 @@
-# Project 1
+# Library App
 
 This is my Project 1: Books for the course Web Programming with Python and JavaScript.
 
