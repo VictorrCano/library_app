@@ -3,4 +3,4 @@ Flask-Session
 psycopg2-binary
 SQLAlchemy
 requests==2.21.0
-Werkzeug==0.15.3
+Werkzeug==2.2.3
